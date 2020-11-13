@@ -52,7 +52,7 @@ namespace Model.Data
         public List<Pays> SelectAll()
         {
             List<Pays> l = new List<Pays>();
-            foreach (DataRow r in _dbal.SelectAll("Pays").Rows)
+            foreach (DataRow r in _dbal.SelectAll("pays").Rows)
             {
                 l.Add(new Pays((int)r["id"], (string)r["nom"]));
             }
@@ -60,12 +60,12 @@ namespace Model.Data
         }
         public Pays SelectByName(string nom)
         {
-            DataRow r = _dbal.SelectByField("Pays", "nom like '" + nom + "'").Rows[0];
+            DataRow r = _dbal.SelectByField("pays", "nom like '" + nom + "'").Rows[0];
             return new Pays((int)r["id"], (string)r["nom"]);
         }
         public Pays SelectById(int id)
         {
-            DataRow r = _dbal.DataRowSelectById("Pays", id);
+            DataRow r = _dbal.DataRowSelectById("pays", id);
             return new Pays((int)r["id"], (string)r["nom"]);
         }
     }

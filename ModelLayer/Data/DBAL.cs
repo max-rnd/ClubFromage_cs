@@ -16,7 +16,7 @@ namespace Model.Data
         private string password;
 
         //Constructor
-        public DBAL(string leServer, string laDatabase, string lUid, string lePassword)
+        public DBAL(string laDatabase, string leServer = "localhost", string lUid = "root", string lePassword = "root")
         {
             this.server = leServer;
             this.database = laDatabase;
@@ -169,8 +169,9 @@ namespace Model.Data
             }
         }
 
-        private DataSet RQuery(string query)
+        public DataSet RQuery(string query)
         {
+            System.Console.WriteLine(query);
             DataSet dataset = new DataSet();
             if (this.OpenConnection())
             {
@@ -186,7 +187,10 @@ namespace Model.Data
         }
         public DataTable SelectByField(string table, string fieldTestCondition)
         {
-            return this.RQuery("select * from " + table + " where " + fieldTestCondition).Tables[0];
+            string query = "SELECT * FROM " + table + " where " + fieldTestCondition;
+            DataSet dataset = RQuery(query);
+            return dataset.Tables[0];
+            // return this.RQuery("select * from " + table + " where " + fieldTestCondition).Tables[0];
         }
         public DataRow DataRowSelectById(string table, int id)
         {
@@ -202,6 +206,8 @@ namespace Model.Data
             List<string>[] list = new List<string>[2];
             list[0] = new List<string>();
             list[1] = new List<string>();
+
+            System.Console.WriteLine(query);
 
             //Open connection
             if (this.OpenConnection())

@@ -60,8 +60,8 @@ namespace Model.Data
         public List<Fromage> SelectAll()
         {
             List<Fromage> l = new List<Fromage>();
-            DataTable tabP = _dbal.SelectAll("Pays");
-            DataTable tabF = _dbal.SelectAll("Fromage");
+            DataTable tabP = _dbal.SelectAll("pays");
+            DataTable tabF = _dbal.SelectAll("fromage");
             foreach (DataRow r in tabF.Rows)
             {
                 l.Add(new Fromage(
@@ -76,7 +76,7 @@ namespace Model.Data
         }
         public Fromage SelectById(int id)
         {
-            DataRow r = _dbal.DataRowSelectById("Fromage", id);
+            DataRow r = _dbal.DataRowSelectById("fromage", id);
             return new Fromage(
                 (int)r["id"],
                 _daoPays.SelectById((int)r["pays_origine_id"]),
@@ -87,7 +87,7 @@ namespace Model.Data
         }
         public Fromage SelectByName(string nom)
         {
-            DataRow r = _dbal.SelectByField("Fromage", "nom = '" + nom + "'").Rows[0];
+            DataRow r = _dbal.SelectByField("fromage", "nom = '" + nom + "'").Rows[0];
             return new Fromage(
                 (int)r["id"],
                 _daoPays.SelectById((int)r["pays_origine_id"]),

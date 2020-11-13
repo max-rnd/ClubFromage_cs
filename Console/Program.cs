@@ -8,8 +8,9 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            DBAL dbal = new DBAL("localhost", "club_fromage", "root", "root");
+            DBAL dbal = new DBAL("club_fromage");
 
+            //dbal.RQuery("select * from pays where nom like 'France'");
 
             // Insertion des pays
             daoPays daoP = new daoPays(dbal);
