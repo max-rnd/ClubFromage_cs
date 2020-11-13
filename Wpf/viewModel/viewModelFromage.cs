@@ -15,34 +15,40 @@ namespace WpfClubFromage.viewModel
     {
         //déclaration des attributs ...à compléter
         private daoPays vmDaoPays;
+        private daoFromage vmDaoFromage;
         private ICommand updateCommand;
         private ObservableCollection<Pays> listPays;
-        private Fromage monFromage = new Fromage(1, "Rebloch");
+        private ObservableCollection<Fromage> listFromage;
+        private Fromage monFromage = new Fromage(1, new Pays(), "Rebloch", new DateTime(), "");
 
         //déclaration des listes...à compléter avec les fromages
         public ObservableCollection<Pays> ListPays { get => listPays; set => listPays = value; }
+        public ObservableCollection<Fromage> ListFromage { get => listFromage; set => listFromage = value; }
         //déclaration des propriétés avec OnPropertyChanged("nom_propriété_bindée")
         //par exemple...
         public string Name
         {
-            get => monFromage.Name;
+            get => monFromage.Nom;
             set
             {
-                if (monFromage.Name != value)
+                if (monFromage.Nom != value)
                 {
-                    monFromage.Name = value;
+                    monFromage.Nom = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("Name");
                 }
             }
         }
+        
 
         //déclaration du contructeur de viewModelFromage
-        public viewModelFromage(daoPays thedaopays)
+        public viewModelFromage(daoPays thedaopays, daoFromage thedaofromage)
         {
             vmDaoPays = thedaopays;
+            vmDaoFromage = thedaofromage;
 
             listPays = new ObservableCollection<Pays>(thedaopays.SelectAll());
+            listFromage = new ObservableCollection<Fromage>(thedaofromage.SelectAll());
 
         }
 
