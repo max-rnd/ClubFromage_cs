@@ -1,5 +1,5 @@
 ﻿Wpf
-1.0.0.0
+
 
 winexe
 C#
@@ -12,7 +12,7 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\Max\source\repos\ClubFromage\Wpf\App.xaml
 3945670841
 
-10-658661624
+8-1137824317
 205-596551475
 GestionFromages.xaml;Home.xaml;MainWindow.xaml;
 

@@ -14,8 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using ModelLayer.Business;
-using ModelLayer.Data;
+using Model.Business;
+using Model.Data;
 
 namespace WpfClubFromage
 {
@@ -25,11 +25,16 @@ namespace WpfClubFromage
     public partial class GestionFromages : Window
     {
         
-        public GestionFromages(DaoPays thedaopays, DaoFromage thedaofromage)
+        public GestionFromages(daoPays thedaopays, daoFromage thedaofromage)
         {
             InitializeComponent();
             mainGrid.DataContext = new viewModel.viewModelFromage(thedaopays, thedaofromage);            
             
+        }
+
+        private void SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            nomFromage.Text = listFromagesView.SelectedItems[0].ToString();
         }
     }
 }
