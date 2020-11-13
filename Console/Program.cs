@@ -10,15 +10,11 @@ namespace Console
         {
             DBAL dbal = new DBAL("club_fromage");
 
-            //dbal.RQuery("select * from pays where nom like 'France'");
-
-            // Insertion des pays
-            daoPays daoP = new daoPays(dbal);
-            daoP.insertCsvFile("C:\\Users\\Max\\source\\repos\\ClubFromage\\pays.csv",";");
-
-            // Insertion des fromages
             daoFromage daoF = new daoFromage(dbal);
-            daoF.insertCsvFile("C:\\Users\\Max\\source\\repos\\ClubFromage\\fromages.csv", ";");
+            foreach (Fromage f in daoF.SelectAll())
+            {
+                System.Console.WriteLine(f.Nom);
+            }
 
             System.Console.WriteLine("  ---- Fin ----");
         }
