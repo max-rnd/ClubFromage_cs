@@ -27,5 +27,10 @@ namespace Model.Business
         public string Nom { get => _nom; set => _nom = value; }
         public DateTime Creation { get => _creation; set => _creation = value; }
         public string Image { get => _image; set => _image = value; }
+
+        public override string ToString()
+        {
+            return this._nom + " => " + this._pays_origine.Nom;
+        }
     }
 }

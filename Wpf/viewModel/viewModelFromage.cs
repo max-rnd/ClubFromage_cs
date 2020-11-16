@@ -18,28 +18,60 @@ namespace WpfClubFromage.viewModel
         private daoFromage vmDaoFromage;
         private ICommand updateCommand;
         private ObservableCollection<Pays> listPays;
-        private ObservableCollection<Fromage> listFromage;
-        private Fromage monFromage = new Fromage(1, new Pays(), "Rebloch", new DateTime(), "");
+        private ObservableCollection<Fromage> listFromages;
+        private Fromage selectedFromage = new Fromage();
+        private Fromage activeFromage = new Fromage();
 
         //déclaration des listes...à compléter avec les fromages
         public ObservableCollection<Pays> ListPays { get => listPays; set => listPays = value; }
-        public ObservableCollection<Fromage> ListFromage { get => listFromage; set => listFromage = value; }
+        public ObservableCollection<Fromage> ListFromages { get => listFromages; set => listFromages = value; }
+        //public Fromage SelectedFromage { get => selectedFromage; set => selectedFromage = value; }
         //déclaration des propriétés avec OnPropertyChanged("nom_propriété_bindée")
         //par exemple...
-        public string Name
+        public Fromage SelectedFromage
         {
-            get => monFromage.Nom;
+            get => selectedFromage;
             set
             {
-                if (monFromage.Nom != value)
+                if (selectedFromage != value)
                 {
-                    monFromage.Nom = value;
+                    selectedFromage = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("SelectedFromage");
+                    if (selectedFromage != null)
+                    {
+                        ActiveFromage = selectedFromage;
+                    }
+                }
+            }
+        }
+        public Fromage ActiveFromage
+        {
+            get => activeFromage;
+            set
+            {
+                if (activeFromage != value)
+                {
+                    activeFromage = value;
                     //création d'un évènement si la propriété Name (bindée dans le XAML) change
                     OnPropertyChanged("Name");
                 }
             }
         }
-        
+        public string Name
+        {
+            get => activeFromage.Nom;
+            set
+            {
+                if (activeFromage.Nom != value)
+                {
+                    activeFromage.Nom = value;
+                    //création d'un évènement si la propriété Name (bindée dans le XAML) change
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
+
 
         //déclaration du contructeur de viewModelFromage
         public viewModelFromage(daoPays thedaopays, daoFromage thedaofromage)
@@ -48,7 +80,7 @@ namespace WpfClubFromage.viewModel
             vmDaoFromage = thedaofromage;
 
             listPays = new ObservableCollection<Pays>(thedaopays.SelectAll());
-            listFromage = new ObservableCollection<Fromage>(thedaofromage.SelectAll());
+            listFromages = new ObservableCollection<Fromage>(thedaofromage.SelectAll());
 
         }
 
