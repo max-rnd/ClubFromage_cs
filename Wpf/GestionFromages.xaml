@@ -36,8 +36,9 @@
             <Image x:Name="imageFromage" Source="{Binding Image}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="81" Width="143" Margin="30,3,0,3"/>
             <TextBox x:Name="imageFromageSource" Text="{Binding ImageSource}" VerticalAlignment="Top" Margin="10,57,15,0" Grid.Row="3"/>
             <Button x:Name="imageFileDialog" Content="Source" Command="{Binding ImageFileDialogCommand}" Grid.Row="3" Grid.Column="0" Margin="21,11,26,51" />
-            <Button x:Name="updateFromage" Content="Mise à jour" Command="{Binding UpdateCommand}" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,10,208,10"/>
-            <Button x:Name="deleteFromage" Content="Suprimer" Command="{Binding DeleteCommand}" Grid.Row="4" Margin="102,10,10,10" Grid.Column="1"/>
+            <Button x:Name="updateFromage" Content="Sauvegarder" Command="{Binding UpdateCommand}" Grid.Row="4" Margin="10,10,10,10"/>
+            <Button x:Name="deleteFromage" Content="Supprimer" Command="{Binding DeleteCommand}" Grid.Row="4" Margin="133,10,144,10" Grid.ColumnSpan="2"/>
+            <Button x:Name="createFromage" Content="Nouveau" Command="{Binding CreateCommand}" Grid.Row="4" Margin="133,10,14,10" Grid.Column="1"/>
         </Grid>
     </Grid>
 </Window>

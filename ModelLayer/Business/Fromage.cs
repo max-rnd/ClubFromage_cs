@@ -20,7 +20,11 @@ namespace Model.Business
         }
         public Fromage()
         {
-            
+            _id = 0;
+            _pays_origine = new Pays();
+            _nom = "";
+            _creation = new DateTime();
+            _image = "";
         }
         public int Id { get => _id; set => _id = value; }
         public Pays PaysOrigine { get => _pays_origine; set => _pays_origine = value; }

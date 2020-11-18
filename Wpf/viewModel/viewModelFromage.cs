@@ -17,13 +17,15 @@ namespace WpfClubFromage.viewModel
     {
         private daoPays vmDaoPays;
         private daoFromage vmDaoFromage;
+        private Fromage selectedFromage = new Fromage();
+        private Fromage activeFromage = new Fromage();
+        private ObservableCollection<Pays> listPays;
+        private ObservableCollection<Fromage> listFromages;
         private ICommand updateCommand;
         private ICommand deleteCommand;
         private ICommand imageFileDialogCommand;
-        private ObservableCollection<Pays> listPays;
-        private ObservableCollection<Fromage> listFromages;
-        private Fromage selectedFromage = new Fromage();
-        private Fromage activeFromage = new Fromage();
+        private ICommand createCommand;
+        
 
         #region Constructeur
         public viewModelFromage(daoPays thedaopays, daoFromage thedaofromage)
@@ -170,6 +172,17 @@ namespace WpfClubFromage.viewModel
                 return this.imageFileDialogCommand;
             }
         }
+        public ICommand CreateCommand
+        {
+            get
+            {
+                if (this.createCommand == null)
+                {
+                    this.createCommand = new RelayCommand(() => CreateFromage(), () => true);
+                }
+                return this.createCommand;
+            }
+        }
         #endregion
 
         #region Action
@@ -196,12 +209,18 @@ namespace WpfClubFromage.viewModel
             fileDialog.Filter = "Text documents (.txt)|*.txt"; // Optional file extensions
             fileDialog.ShowDialog();
         }
+        private void CreateFromage()
+        {
+            Fromage newF = new Fromage();
+            newF.Nom = "Nouveau fromage";
+            this.ListFromages.Add(newF);
+        }
         #endregion
 
         #region Autre méthode
         private bool IsSelected()
         {
-            if (ActiveFromage.Nom != null)
+            if (ActiveFromage.Nom != "")
                 return true;
             else
             {
