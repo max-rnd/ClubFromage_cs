@@ -66,7 +66,7 @@ namespace Model.Data
             {
                 l.Add(new Fromage(
                     (int)r["id"],
-                    _daoPays.SelectById((int)r["pays_origine"]),
+                    _daoPays.SelectById((int)r["pays_origine_id"]),
                     (string)r["nom"],
                     (DateTime)r["creation"],
                     (string)r["image"]

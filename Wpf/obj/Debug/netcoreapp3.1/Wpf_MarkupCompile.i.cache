@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Max\source\repos\ClubFromage\Wpf\obj\Debug\netcoreapp3.1\
+D:\Lab\ClubFromage_cs\Wpf\obj\Debug\netcoreapp3.1\
 Wpf
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\Max\source\repos\ClubFromage\Wpf\App.xaml
+D:\Lab\ClubFromage_cs\Wpf\App.xaml
 3945670841
 
 10-658661624
-205-596551475
+205-1348462476
 GestionFromages.xaml;Home.xaml;MainWindow.xaml;
 
-True
+False
 

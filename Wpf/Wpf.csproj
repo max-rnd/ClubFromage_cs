@@ -10,4 +10,8 @@
     <ProjectReference Include="..\ModelLayer\ModelLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
+
 </Project>

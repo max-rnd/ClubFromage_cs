@@ -7,3 +7,12 @@ C:\Users\Max\source\repos\ClubFromage\ModelLayer\bin\Debug\netcoreapp3.1\ModelLa
 C:\Users\Max\source\repos\ClubFromage\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.csproj.CoreCompileInputs.cache
 C:\Users\Max\source\repos\ClubFromage\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.dll
 C:\Users\Max\source\repos\ClubFromage\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.pdb
+D:\Lab\ClubFromage_cs\ModelLayer\bin\Debug\netcoreapp3.1\ModelLayer.deps.json
+D:\Lab\ClubFromage_cs\ModelLayer\bin\Debug\netcoreapp3.1\ModelLayer.dll
+D:\Lab\ClubFromage_cs\ModelLayer\bin\Debug\netcoreapp3.1\ModelLayer.pdb
+D:\Lab\ClubFromage_cs\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.csprojAssemblyReference.cache
+D:\Lab\ClubFromage_cs\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.AssemblyInfoInputs.cache
+D:\Lab\ClubFromage_cs\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.AssemblyInfo.cs
+D:\Lab\ClubFromage_cs\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.csproj.CoreCompileInputs.cache
+D:\Lab\ClubFromage_cs\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.dll
+D:\Lab\ClubFromage_cs\ModelLayer\obj\Debug\netcoreapp3.1\ModelLayer.pdb

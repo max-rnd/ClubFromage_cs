@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Model.Business;
 using Model.Data;
@@ -51,6 +52,8 @@ namespace WpfClubFromage.viewModel
                     OnPropertyChanged("Name");
                     OnPropertyChanged("Origin");
                     OnPropertyChanged("Creation");
+                    OnPropertyChanged("Image");
+                    OnPropertyChanged("ImageSource");
                 }
             }
         }
@@ -87,6 +90,30 @@ namespace WpfClubFromage.viewModel
                 {
                     activeFromage.PaysOrigine = value;
                     OnPropertyChanged("Origin");
+                }
+            }
+        }
+        public string Image
+        {
+            get => "D:\\Lab\\ClubFromage_cs\\Wpf\\img\\" + activeFromage.Image;
+            /*set
+            {
+                if (activeFromage.Image != value)
+                {
+                    activeFromage.Image = value;
+                    OnPropertyChanged("Image");
+                }
+            }*/
+        }
+        public string ImageSource
+        {
+            get => activeFromage.Image;
+            set
+            {
+                if (activeFromage.Image != value)
+                {
+                    activeFromage.Image = value;
+                    OnPropertyChanged("ImageSource");
                 }
             }
         }
@@ -128,8 +155,8 @@ namespace WpfClubFromage.viewModel
 
         private void UpdateFromage()
         {
-            //code du bouton - à coder
-
+            this.vmDaoFromage.update(this.ActiveFromage);
+            MessageBox.Show("Le fromage à bien été mis à jour");
         }
     }
 }

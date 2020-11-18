@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JAcFelwzMcVT1kPNi7g4cOBge5mO9gBjbv40wkFaaGFHsE4gq3/DMlmN2R6V5NEC7Xu3fqHHeiG2iZ9QbKwkwQ==",
+  "dgSpecHash": "2Lta3gZ7tCZNZ/mOBuesJxpVSDXrVOI0rFNAlT3GxnLTnrsjU5cIS9gmPXtdN03rE7fo8sQ7N9QK0IEErWRpUg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\Console\\Console.csproj",
+  "projectFilePath": "D:\\Lab\\ClubFromage_cs\\Console\\Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Max\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Max\\.nuget\\packages\\csvhelper\\15.0.9\\csvhelper.15.0.9.nupkg.sha512",

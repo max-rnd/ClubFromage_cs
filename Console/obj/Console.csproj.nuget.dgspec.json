@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Max\\source\\repos\\ClubFromage\\Console\\Console.csproj": {}
+    "D:\\Lab\\ClubFromage_cs\\Console\\Console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Max\\source\\repos\\ClubFromage\\Console\\Console.csproj": {
+    "D:\\Lab\\ClubFromage_cs\\Console\\Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Max\\source\\repos\\ClubFromage\\Console\\Console.csproj",
+        "projectUniqueName": "D:\\Lab\\ClubFromage_cs\\Console\\Console.csproj",
         "projectName": "Console",
-        "projectPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\Console\\Console.csproj",
+        "projectPath": "D:\\Lab\\ClubFromage_cs\\Console\\Console.csproj",
         "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\Console\\obj\\",
+        "outputPath": "D:\\Lab\\ClubFromage_cs\\Console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\ModelLayer.csproj": {
-                "projectPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\ModelLayer.csproj"
+              "D:\\Lab\\ClubFromage_cs\\ModelLayer\\ModelLayer.csproj": {
+                "projectPath": "D:\\Lab\\ClubFromage_cs\\ModelLayer\\ModelLayer.csproj"
               }
             }
           }
@@ -60,14 +60,14 @@
         }
       }
     },
-    "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\ModelLayer.csproj": {
+    "D:\\Lab\\ClubFromage_cs\\ModelLayer\\ModelLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\ModelLayer.csproj",
+        "projectUniqueName": "D:\\Lab\\ClubFromage_cs\\ModelLayer\\ModelLayer.csproj",
         "projectName": "ModelLayer",
-        "projectPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\ModelLayer.csproj",
+        "projectPath": "D:\\Lab\\ClubFromage_cs\\ModelLayer\\ModelLayer.csproj",
         "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\obj\\",
+        "outputPath": "D:\\Lab\\ClubFromage_cs\\ModelLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",

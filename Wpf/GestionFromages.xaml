@@ -33,7 +33,8 @@
             <Label Content="Date de création" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
             <DatePicker x:Name="dateCreation" SelectedDate="{Binding Creation}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10"/>
             <Label Content="Image du fromage" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
-            <Image x:Name="imageFromage" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+            <Image x:Name="imageFromage" Source="{Binding Image}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="81" Width="143" Margin="30,3,0,3"/>
+            <TextBox x:Name="imageFromageSource" Text="{Binding ImageSource}" VerticalAlignment="Top" Margin="10,57,15,0" Grid.Row="3"/>
             <Button x:Name="updateFromage" Content="Mise à jour" Command="{Binding UpdateCommand}" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="10"/>
         </Grid>
     </Grid>

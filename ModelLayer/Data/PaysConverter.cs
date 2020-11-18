@@ -10,7 +10,7 @@ namespace Model.Data
         private DBAL _dbal;
         public PaysConverter()
         {
-            _dbal = new DBAL("club_fromage");
+            _dbal = new DBAL("club_fromager");
         }
         public override object ConvertFromString(string t, IReaderRow row, MemberMapData memberMapData)
         {

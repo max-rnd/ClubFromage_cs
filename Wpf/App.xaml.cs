@@ -26,7 +26,7 @@ namespace WpfClubFromage
         {
             //C'est ici, dans la méthode Application_Startup, qu'on instancie nos objets Dbal et Dao
 
-            DBAL thedbal = new DBAL("club_fromage");
+            DBAL thedbal = new DBAL("club_fromager");
             daoPays thedaopays = new daoPays(thedbal);
             daoFromage thedaofromage = new daoFromage(thedbal);
 

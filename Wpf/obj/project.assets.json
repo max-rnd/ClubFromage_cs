@@ -5550,11 +5550,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Max\\source\\repos\\ClubFromage\\Wpf\\Wpf.csproj",
+      "projectUniqueName": "D:\\Lab\\ClubFromage_cs\\Wpf\\Wpf.csproj",
       "projectName": "Wpf",
-      "projectPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\Wpf\\Wpf.csproj",
+      "projectPath": "D:\\Lab\\ClubFromage_cs\\Wpf\\Wpf.csproj",
       "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\Wpf\\obj\\",
+      "outputPath": "D:\\Lab\\ClubFromage_cs\\Wpf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5570,8 +5570,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\ModelLayer.csproj": {
-              "projectPath": "C:\\Users\\Max\\source\\repos\\ClubFromage\\ModelLayer\\ModelLayer.csproj"
+            "D:\\Lab\\ClubFromage_cs\\ModelLayer\\ModelLayer.csproj": {
+              "projectPath": "D:\\Lab\\ClubFromage_cs\\ModelLayer\\ModelLayer.csproj"
             }
           }
         }
