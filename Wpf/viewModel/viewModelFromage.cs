@@ -16,6 +16,7 @@ namespace WpfClubFromage.viewModel
     {
         private daoPays vmDaoPays;
         private daoFromage vmDaoFromage;
+        private ICommand imageFileDialogCommand;
         private ICommand updateCommand;
         private ObservableCollection<Pays> listPays;
         private ObservableCollection<Fromage> listFromages;
@@ -130,7 +131,19 @@ namespace WpfClubFromage.viewModel
             }
         }
 
-        //Méthode appelée au click du bouton UpdateCommand
+        public ICommand ImageFileDialogCommand
+        {
+            get
+            {
+                if (this.imageFileDialogCommand == null)
+                {
+                    this.imageFileDialogCommand = new RelayCommand(() => ImageFileDialog(), () => true);
+                }
+                return this.imageFileDialogCommand;
+
+            }
+
+        }
         public ICommand UpdateCommand
         {
             get
@@ -155,6 +168,11 @@ namespace WpfClubFromage.viewModel
         {
             this.vmDaoFromage.update(this.ActiveFromage);
             MessageBox.Show("Le fromage à bien été mis à jour");
+        }
+        private void DeleteCommand()
+        {
+            MessageBox.Show("Test suppr");
+            /*this.vmDaoFromage.delete(this.ActiveFromage);*/
         }
     }
 }
