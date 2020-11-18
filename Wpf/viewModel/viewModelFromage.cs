@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using Microsoft.Win32;
 using Model.Business;
 using Model.Data;
 using WpfClubFromage.viewModel;
@@ -16,14 +17,37 @@ namespace WpfClubFromage.viewModel
     {
         private daoPays vmDaoPays;
         private daoFromage vmDaoFromage;
-        private ICommand imageFileDialogCommand;
         private ICommand updateCommand;
+        private ICommand deleteCommand;
+        private ICommand imageFileDialogCommand;
         private ObservableCollection<Pays> listPays;
         private ObservableCollection<Fromage> listFromages;
         private Fromage selectedFromage = new Fromage();
         private Fromage activeFromage = new Fromage();
 
-        // Liaison Binding
+        #region Constructeur
+        public viewModelFromage(daoPays thedaopays, daoFromage thedaofromage)
+        {
+            vmDaoPays = thedaopays;
+            vmDaoFromage = thedaofromage;
+
+            listPays = new ObservableCollection<Pays>(thedaopays.SelectAll());
+            listFromages = new ObservableCollection<Fromage>(thedaofromage.SelectAll());
+
+            foreach (Fromage f in listFromages)
+            {
+                foreach (Pays p in listPays)
+                {
+                    if (f.PaysOrigine.Nom == p.Nom)
+                    {
+                        f.PaysOrigine = p;
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region Liaison Binding
         public ObservableCollection<Pays> ListPays { get => listPays; set => listPays = value; }
         public ObservableCollection<Fromage> ListFromages { get => listFromages; set => listFromages = value; }
         public Fromage SelectedFromage
@@ -110,40 +134,9 @@ namespace WpfClubFromage.viewModel
                 }
             }
         }
+        #endregion
 
-        public viewModelFromage(daoPays thedaopays, daoFromage thedaofromage)
-        {
-            vmDaoPays = thedaopays;
-            vmDaoFromage = thedaofromage;
-
-            listPays = new ObservableCollection<Pays>(thedaopays.SelectAll());
-            listFromages = new ObservableCollection<Fromage>(thedaofromage.SelectAll());
-
-            foreach (Fromage f in listFromages)
-            {
-                foreach (Pays p in listPays)
-                {
-                    if (f.PaysOrigine.Nom == p.Nom)
-                    {
-                        f.PaysOrigine = p;
-                    }
-                }
-            }
-        }
-
-        public ICommand ImageFileDialogCommand
-        {
-            get
-            {
-                if (this.imageFileDialogCommand == null)
-                {
-                    this.imageFileDialogCommand = new RelayCommand(() => ImageFileDialog(), () => true);
-                }
-                return this.imageFileDialogCommand;
-
-            }
-
-        }
+        #region Commande (boutons)
         public ICommand UpdateCommand
         {
             get
@@ -153,26 +146,69 @@ namespace WpfClubFromage.viewModel
                     this.updateCommand = new RelayCommand(() => UpdateFromage(), () => true);
                 }
                 return this.updateCommand;
-
             }
-
         }
-        private void ImageFileDialog()
+        public ICommand DeleteCommand
         {
-            MessageBox.Show("Test");
-            /*OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-                ActiveFromage.Image = openFileDialog.FileName;*/
+            get
+            {
+                if (this.deleteCommand == null)
+                {
+                    this.deleteCommand = new RelayCommand(() => DeleteFromage(), () => true);
+                }
+                return this.deleteCommand;
+            }
         }
+        public ICommand ImageFileDialogCommand
+        {
+            get
+            {
+                if (this.imageFileDialogCommand == null)
+                {
+                    this.imageFileDialogCommand = new RelayCommand(() => UploadImage(), () => true);
+                }
+                return this.imageFileDialogCommand;
+            }
+        }
+        #endregion
+
+        #region Action
         private void UpdateFromage()
         {
-            this.vmDaoFromage.update(this.ActiveFromage);
-            MessageBox.Show("Le fromage à bien été mis à jour");
+            if (IsSelected())
+            {
+                this.vmDaoFromage.update(this.ActiveFromage);
+                MessageBox.Show("Le fromage à bien été mis à jour");
+            }
         }
-        private void DeleteCommand()
+        private void DeleteFromage()
         {
-            MessageBox.Show("Test suppr");
-            /*this.vmDaoFromage.delete(this.ActiveFromage);*/
+            if (IsSelected())
+            {
+                MessageBox.Show("Test suppr");
+                /*this.vmDaoFromage.delete(this.ActiveFromage);*/
+            }
         }
+        private void UploadImage()
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.DefaultExt = ".txt"; // Required file extension 
+            fileDialog.Filter = "Text documents (.txt)|*.txt"; // Optional file extensions
+            fileDialog.ShowDialog();
+        }
+        #endregion
+
+        #region Autre méthode
+        private bool IsSelected()
+        {
+            if (ActiveFromage.Nom != null)
+                return true;
+            else
+            {
+                MessageBox.Show("Il faut selectionner un fromage");
+                return false;
+            }
+        }
+        #endregion
     }
 }
