@@ -96,14 +96,6 @@ namespace WpfClubFromage.viewModel
         public string Image
         {
             get => "D:\\Lab\\ClubFromage_cs\\Wpf\\img\\" + activeFromage.Image;
-            /*set
-            {
-                if (activeFromage.Image != value)
-                {
-                    activeFromage.Image = value;
-                    OnPropertyChanged("Image");
-                }
-            }*/
         }
         public string ImageSource
         {
@@ -152,7 +144,13 @@ namespace WpfClubFromage.viewModel
             }
 
         }
-
+        private void ImageFileDialog()
+        {
+            MessageBox.Show("Test");
+            /*OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                ActiveFromage.Image = openFileDialog.FileName;*/
+        }
         private void UpdateFromage()
         {
             this.vmDaoFromage.update(this.ActiveFromage);
